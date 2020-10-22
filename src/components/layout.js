@@ -17,6 +17,7 @@ const layout = ({ children }) => {
             --lightColor: #f6f6f8;
             --medColor: #333;
             --darkColor: rgb(0, 0, 0);
+            --transition: all 0.3s linear;
           }
 
           * {
@@ -62,7 +63,7 @@ const layout = ({ children }) => {
       <Header />
       <main
         css={css`
-          margin: 2rem auto;
+          margin: 4rem auto;
           max-width: 90vw;
         `}
       >
