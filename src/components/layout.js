@@ -2,7 +2,7 @@ import React from 'react'
 import { Global, css } from '@emotion/core'
 import { Helmet } from 'react-helmet'
 import UseSiteMetadata from '../hooks/use-siteMetadata'
-import Header from './header'
+import Navbar from './Navbar'
 
 const layout = ({ children }) => {
   const { title, description, author } = UseSiteMetadata()
@@ -60,7 +60,7 @@ const layout = ({ children }) => {
         <title>{title}</title>
         <meta name={description} content={description} author={author} />
       </Helmet>
-      <Header />
+      <Navbar />
       <main
         css={css`
           margin: 4rem auto;
