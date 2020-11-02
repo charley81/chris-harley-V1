@@ -95,7 +95,7 @@ const layout = ({ children }) => {
         css={css`
           margin: 0 auto;
           max-width: 90vw;
-          width: 700px;
+          width: 900px;
         `}
       >
         {children}
