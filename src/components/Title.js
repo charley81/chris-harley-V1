@@ -7,14 +7,6 @@ export default function Title({ title }) {
       css={css`
         text-align: center;
         margin-bottom: 4rem;
-
-        .underline {
-          width: 10rem;
-          height: 0.25rem;
-          margin-bottom: 1.25rem;
-          background: var(--primaryColor);
-          margin: 0 auto;
-        }
       `}
     >
       <h2>{title || 'default title'}</h2>
