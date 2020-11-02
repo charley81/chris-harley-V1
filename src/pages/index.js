@@ -1,10 +1,13 @@
 import React from 'react'
+import Hero from '../components/Hero'
 import Layout from '../components/Layout'
+import Services from '../components/Services'
 
 export default function Home() {
   return (
     <Layout>
-      <h1>Home Page</h1>
+      <Hero />
+      <Services />
     </Layout>
   )
 }

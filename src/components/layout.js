@@ -18,6 +18,7 @@ const layout = ({ children }) => {
             --medColor: #333;
             --darkColor: rgb(0, 0, 0);
             --transition: all 0.3s linear;
+            --borderRadius: 3px;
           }
 
           * {
@@ -34,6 +35,7 @@ const layout = ({ children }) => {
             font-size: 18px;
             background: var(--lightColor);
             color: var(--medColor);
+            letter-spacing: 2px;
           }
 
           h1,h2,h3,h4,h5,h6 {
@@ -53,6 +55,34 @@ const layout = ({ children }) => {
           a {
             text-decoration: none;
           }
+
+          /* Utility Classes */
+          .btn {
+            background: var(--primaryColor);
+            color: var(--lightColor);
+            padding: 0.375rem 1rem;
+            display: inline-block;
+            transition: var(--transition);
+            font-size: 0.875rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            border-radius: var(--borderRadius);
+
+            &:hover {
+              background: transparent;
+              border-color: var(--primaryColor);
+              color: var(--darkColor);
+            }
+          }
+
+          .center-btn {
+            display: block;
+            width: 12rem;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 3rem;
+          }
         `}
       />
       <Helmet>
@@ -63,8 +93,9 @@ const layout = ({ children }) => {
       <Navbar />
       <main
         css={css`
-          margin: 4rem auto;
+          margin: 0 auto;
           max-width: 90vw;
+          width: 900px;
         `}
       >
         {children}

@@ -2,6 +2,7 @@ import React from 'react'
 import { FaAlignRight } from 'react-icons/fa'
 import PageLinks from '../constants/links'
 import { css } from '@emotion/core'
+import { Link } from 'gatsby'
 
 export default function Navbar() {
   return (
@@ -16,6 +17,10 @@ export default function Navbar() {
       align-items: center;
       z-index: 200;
       background: var(--lightColor);
+
+      h1 a {
+        color: var(--darkColor);
+      }
 
       span {
         color: var(--primaryColor);
@@ -85,7 +90,9 @@ export default function Navbar() {
       <div className="nav-center">
         <div className="nav-header">
           <h1>
-            chris<span>Harley</span>
+            <Link to="/">
+              chris<span>Harley</span>
+            </Link>
           </h1>
           <button type="button">
             <FaAlignRight />
