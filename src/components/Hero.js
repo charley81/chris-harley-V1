@@ -8,7 +8,8 @@ export default function Hero() {
     <header
       css={css`
         height: 100vh;
-        margin-top: 20vh;
+        display: flex;
+        align-items: center;
         font-size: 1.1rem;
 
         @media (min-width: 500px) {

@@ -5,11 +5,7 @@ import services from '../constants/services'
 
 export default function Services() {
   return (
-    <div
-      css={css`
-        background: var(--secondaryColor);
-      `}
-    >
+    <div>
       <Title title="Services" />
       {services.map(service => {
         const { id, icon, title, text } = service

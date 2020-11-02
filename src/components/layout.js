@@ -93,7 +93,7 @@ const layout = ({ children }) => {
       <Navbar />
       <main
         css={css`
-          margin: 4rem auto;
+          margin: 0 auto;
           max-width: 90vw;
           width: 700px;
         `}
