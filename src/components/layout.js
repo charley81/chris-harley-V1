@@ -83,6 +83,13 @@ const layout = ({ children }) => {
             margin: 0 auto;
             margin-top: 3rem;
           }
+
+          .underline {
+          width: 10rem;
+          height: 0.25rem;
+          background: var(--primaryColor);
+          margin: 0.5rem auto 1rem;
+        }
         `}
       />
       <Helmet>
@@ -95,7 +102,7 @@ const layout = ({ children }) => {
         css={css`
           margin: 0 auto;
           max-width: 90vw;
-          width: 900px;
+          width: 1200px;
         `}
       >
         {children}

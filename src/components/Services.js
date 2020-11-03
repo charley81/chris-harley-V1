@@ -9,8 +9,9 @@ export default function Services() {
       css={css`
         .items {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           grid-gap: 1rem;
+          align-items: center;
         }
 
         article {
@@ -18,6 +19,16 @@ export default function Services() {
           padding: 1rem;
           text-align: center;
           border-radius: var(--borderRadius);
+          transition: var(--transition);
+
+          &:hover {
+            background: var(--primaryColor);
+            color: var(--darkColor);
+
+            .underline {
+              background: var(--darkColor);
+            }
+          }
         }
 
         .icon {
@@ -25,7 +36,7 @@ export default function Services() {
         }
 
         h3 {
-          margin: 1rem 0;
+          margin-top: 1rem;
         }
       `}
     >
@@ -38,6 +49,7 @@ export default function Services() {
             <article key={id}>
               {icon}
               <h3>{title}</h3>
+              <div className="underline"></div>
               <p>{text}</p>
             </article>
           )
