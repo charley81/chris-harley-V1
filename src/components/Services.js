@@ -7,6 +7,10 @@ export default function Services() {
   return (
     <div
       css={css`
+        .title {
+          margin-top: 0;
+        }
+
         .items {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -40,7 +44,7 @@ export default function Services() {
         }
       `}
     >
-      <Title title="Services" />
+      <Title title="Services" className="title" />
       <div className="items">
         {services.map(service => {
           const { id, icon, title, text } = service
