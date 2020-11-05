@@ -6,7 +6,7 @@ export default function Title({ title }) {
     <div
       css={css`
         text-align: center;
-        margin-bottom: 4rem;
+        margin: 4rem 0;
       `}
     >
       <h2>{title || 'default title'}</h2>
