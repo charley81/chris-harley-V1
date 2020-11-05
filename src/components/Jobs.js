@@ -32,39 +32,47 @@ export default function Jobs() {
   return (
     <section
       css={css`
-        .btn-container {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          text-align: left;
-          grid-gap: 1rem;
+        .jobs-container {
+          @media (min-width: 992px) {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+          }
         }
+
+        .btn-container {
+          text-align: center;
+
+          @media (min-width: 992px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+        }
+
         button {
-          background: transparent;
-          border: 1px solid var(--primaryColor);
-          border-radius: var(--borderRadius);
-          outline: transparent;
+          border: none;
           color: var(--primaryColor);
-          font-size: 1rem;
-          cursor: pointer;
-          padding: 0.25rem 0;
+          background: transparent;
+          margin: 0 0.5rem;
+          outline: transparent;
+          font-size: 0.75rem;
+
+          @media (min-width: 992px) {
+            margin-bottom: 1rem;
+            font-size: 1.025rem;
+          }
         }
 
         .active-btn {
-          background: var(--primaryColor);
-          color: var(--lightColor);
+          box-shadow: 0 2px var(--medColor);
+
+          @media (min-width: 992px) {
+            box-shadow: -2px 0 var(--medColor);
+          }
         }
 
         .job-info {
           margin: 1rem 0;
-
-          h4 {
-            background: var(--secondaryColor);
-            color: var(--darkColor);
-            margin: 1rem 0;
-            display: inline-block;
-            padding: 0.5rem;
-            border-radius: var(--borderRadius);
-          }
         }
 
         .desc-item {
@@ -75,14 +83,13 @@ export default function Jobs() {
         }
 
         .job-icon {
-          display: inline-block;
+          font-size: 1rem;
           color: var(--primaryColor);
-          font-size: 2rem;
         }
       `}
     >
-      <Title title="Experience" />
-      <div className="job-center">
+      <Title title="Experience" name="title" />
+      <div className="jobs-container">
         <div className="btn-container">
           {jobs.map((item, index) => (
             <button
