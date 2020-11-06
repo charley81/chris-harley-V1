@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Title from './Title'
-import { FaAlignRight, FaAngleDoubleRight } from 'react-icons/fa'
+import { FaAngleDoubleRight } from 'react-icons/fa'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import { css } from '@emotion/core'
 
@@ -10,12 +10,12 @@ const query = graphql`
       nodes {
         company
         date
+        strapiId
+        position
         desc {
           id
           name
         }
-        strapiId
-        position
       }
     }
   }
@@ -36,6 +36,7 @@ export default function Jobs() {
           @media (min-width: 992px) {
             display: grid;
             grid-template-columns: 200px 1fr;
+            align-items: start;
           }
         }
 
@@ -45,7 +46,8 @@ export default function Jobs() {
           @media (min-width: 992px) {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            height: 100%;
+            justify-content: center;
           }
         }
 
@@ -56,10 +58,12 @@ export default function Jobs() {
           margin: 0 0.5rem;
           outline: transparent;
           font-size: 0.75rem;
+          text-align: left;
 
           @media (min-width: 992px) {
             margin-bottom: 1rem;
             font-size: 1.025rem;
+            padding-left: 0.25rem;
           }
         }
 
@@ -73,13 +77,17 @@ export default function Jobs() {
 
         .job-info {
           margin: 1rem 0;
+
+          @media (min-width: 992px) {
+            margin: 0;
+          }
         }
 
         .desc-item {
           display: flex;
           align-items: center;
           gap: 1rem;
-          margin: 1rem 0;
+          margin: 0.5rem 0;
         }
 
         .job-icon {
@@ -93,8 +101,8 @@ export default function Jobs() {
         <div className="btn-container">
           {jobs.map((item, index) => (
             <button
-              key={item.strapId}
-              className={index === value && 'active-btn'}
+              key={item.strapiId}
+              className={`${index === value && 'active-btn'}`}
               onClick={() => setValue(index)}
             >
               {item.company}
