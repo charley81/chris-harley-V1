@@ -10,7 +10,7 @@ export default function Projects({ projects, title, showLink }) {
         <Title title={title} name="title" />
         <div className="section-center">
           {projects.map((project, index) => (
-            <Project key={project.id} index={index} />
+            <Project key={project.id} index={index} {...project} />
           ))}
         </div>
         {showLink && (

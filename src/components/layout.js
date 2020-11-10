@@ -31,7 +31,7 @@ const layout = ({ children }) => {
           body {
             margin: 0;
             font-family: 'Raleway', sans-serif;
-            line-height: 1.4;
+            line-height: 1.5;
             font-size: 18px;
             background: var(--lightColor);
             color: var(--medColor);
