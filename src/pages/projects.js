@@ -1,12 +1,44 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import Projects from '../components/Projects'
 
-const projects = () => {
+export default function ProjectPage({
+  data: {
+    allStrapiProjects: { nodes: projects },
+  },
+}) {
+  console.log(projects)
   return (
     <Layout>
-      <h1>Projects Page</h1>
+      <section>
+        <Projects projects={projects} title="All Projects" />
+      </section>
     </Layout>
   )
 }
 
-export default projects
+export const query = graphql`
+  {
+    allStrapiProjects {
+      nodes {
+        description
+        github
+        id
+        title
+        url
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        stack {
+          id
+          title
+        }
+      }
+    }
+  }
+`

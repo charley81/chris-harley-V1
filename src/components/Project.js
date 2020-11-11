@@ -134,7 +134,7 @@ export default function Project({
     >
       <Image fluid={image.childImageSharp.fluid} className="project-image" />
       <div className="project-info">
-        <span className="project-number">0{index + 1}</span>
+        <span className="project-number">0{index + 1}.</span>
         <h3>{title}</h3>
         <p>{description}</p>
         <div className="project-stack">
@@ -146,7 +146,7 @@ export default function Project({
           <a href={github}>
             <FaGithubSquare className="project-icon" />
           </a>
-          <a href={github}>
+          <a href={url}>
             <FaShareSquare className="project-icon" />
           </a>
         </div>
