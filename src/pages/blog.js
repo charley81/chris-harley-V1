@@ -1,12 +1,39 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import Blogs from '../components/Blogs'
 
-const blog = () => {
+export default function blog({
+  data: {
+    allStrapiBlogs: { nodes: blogs },
+  },
+}) {
   return (
     <Layout>
-      <h1>Blogs Page</h1>
+      <Blogs blogs={blogs} title="Blog" />
     </Layout>
   )
 }
 
-export default blog
+export const query = graphql`
+  {
+    allStrapiBlogs {
+      nodes {
+        title
+        id
+        slug
+        content
+        description
+        date(formatString: "MMMM Do YYYY")
+        category
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
