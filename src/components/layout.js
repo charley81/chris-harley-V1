@@ -19,6 +19,8 @@ const layout = ({ children }) => {
             --darkColor: rgb(0, 0, 0);
             --transition: all 0.3s linear;
             --borderRadius: 3px;
+            --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           }
 
           * {
