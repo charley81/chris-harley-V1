@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from './Title'
-import Blog from './blog'
+import Blog from './Blog'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
