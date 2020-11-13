@@ -46,21 +46,28 @@ const contact = () => {
       >
         <article>
           <Title title="Get In Touch" />
-          <form>
+          <form name="contact" method="POST" data-netlify="true">
             <div className="form-group">
-              <input type="text" placeholder="name" className="form-control" />
+              <input
+                type="text"
+                placeholder="name"
+                name="name"
+                className="form-control"
+              />
               <input
                 type="email"
                 placeholder="email"
                 className="form-control"
+                name="email"
               />
               <textarea
                 name="message"
                 rows="5"
                 placeholder="message"
                 className="form-control"
+                name="message"
               ></textarea>
-              <button type="button" className="btn">
+              <button type="submit" className="btn">
                 Submit
               </button>
             </div>
