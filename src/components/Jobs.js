@@ -27,7 +27,7 @@ export default function Jobs() {
     allStrapiJobs: { nodes: jobs },
   } = data
   const [value, setValue] = useState(0)
-  const { company, date, desc, position, strapiId } = jobs[value]
+  const { company, date, desc, position } = jobs[value]
 
   return (
     <section

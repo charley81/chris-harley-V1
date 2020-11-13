@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Image from 'gatsby-image'
 import { FaGithubSquare, FaShareSquare } from 'react-icons/fa'
 import { css } from '@emotion/core'
@@ -132,10 +133,13 @@ export default function Project({
         }
       `}
     >
-      <Image fluid={image.childImageSharp.fluid} className="project-image" />
+      {image && (
+        <Image fluid={image.childImageSharp.fluid} className="project-image" />
+      )}
+
       <div className="project-info">
         <span className="project-number">0{index + 1}.</span>
-        <h3>{title}</h3>
+        <h3>{title || 'My Project'}</h3>
         <p>{description}</p>
         <div className="project-stack">
           {stack.map(item => (
@@ -153,4 +157,13 @@ export default function Project({
       </div>
     </article>
   )
+}
+
+Project.propTypes = {
+  title: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  stack: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
