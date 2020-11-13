@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Global, css } from '@emotion/core'
 import { Helmet } from 'react-helmet'
 import UseSiteMetadata from '../hooks/use-siteMetadata'
 import Navbar from './Navbar'
+import Footer from './Footer'
+import Sidebar from './Sidebar'
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   const { title, description, author } = UseSiteMetadata()
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
@@ -99,7 +105,8 @@ const layout = ({ children }) => {
         <title>{title}</title>
         <meta name={description} content={description} author={author} />
       </Helmet>
-      <Navbar />
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <main
         css={css`
           margin: 0 auto;
@@ -109,9 +116,9 @@ const layout = ({ children }) => {
       >
         {children}
       </main>
-      <footer></footer>
+      <Footer />
     </>
   )
 }
 
-export default layout
+export default Layout

@@ -4,7 +4,7 @@ import PageLinks from '../constants/links'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
-export default function Navbar() {
+export default function Navbar({ toggleSidebar }) {
   return (
     <nav
       css={css`
@@ -94,7 +94,7 @@ export default function Navbar() {
               chris<span>Harley</span>
             </Link>
           </h1>
-          <button type="button">
+          <button type="button" className="toggle-btn" onClick={toggleSidebar}>
             <FaAlignRight />
           </button>
         </div>
