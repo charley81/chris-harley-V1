@@ -94,7 +94,12 @@ export default function Navbar({ toggleSidebar }) {
               chris<span>Harley</span>
             </Link>
           </h1>
-          <button type="button" className="toggle-btn" onClick={toggleSidebar}>
+          <button
+            type="button"
+            className="toggle-btn"
+            onClick={toggleSidebar}
+            aria-label="Open Menu Button"
+          >
             <FaAlignRight />
           </button>
         </div>

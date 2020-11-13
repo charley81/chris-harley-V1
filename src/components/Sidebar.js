@@ -126,7 +126,11 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
         }
       `}
     >
-      <button className="close-btn" onClick={toggleSidebar}>
+      <button
+        className="close-btn"
+        onClick={toggleSidebar}
+        aria-label="Close Menu Button"
+      >
         <FaTimes />
       </button>
       <div className="side-container">
