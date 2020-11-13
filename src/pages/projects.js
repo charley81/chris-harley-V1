@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import Projects from '../components/Projects'
+import SEO from '../components/SEO'
 
 export default function ProjectPage({
   data: {
@@ -11,6 +12,10 @@ export default function ProjectPage({
   console.log(projects)
   return (
     <Layout>
+      <SEO
+        title="Projects"
+        description="Projects page for web developer Chris Harley"
+      />
       <section>
         <Projects projects={projects} title="All Projects" />
       </section>

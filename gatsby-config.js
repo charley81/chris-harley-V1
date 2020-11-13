@@ -3,7 +3,7 @@ module.exports = {
     title: 'Chris Harley',
     description: 'Freelance Web Developer',
     author: 'Chris Harley',
-    siteUrl: 'https://charley81.com',
+    siteUrl: 'https://chrisharleyv1.netlify.app',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Services from '../components/Services'
 import Projects from '../components/Projects'
 import Blogs from '../components/Blogs'
+import SEO from '../components/SEO'
 
 export default function Home({ data }) {
   const {
@@ -15,6 +16,10 @@ export default function Home({ data }) {
 
   return (
     <Layout>
+      <SEO
+        title="Home"
+        description="Home page for web developer Chris Harley"
+      />
       <Hero />
       <Services />
       <Jobs />
