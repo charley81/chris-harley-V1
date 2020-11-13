@@ -2,10 +2,15 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import SEO from '../components/SEO'
 
 export default function FourOhFour() {
   return (
     <Layout>
+      <SEO
+        title="404 Page"
+        description="Page not found in website for web developer Chris Harley"
+      />
       <div
         css={css`
           display: flex;

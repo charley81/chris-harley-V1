@@ -2,10 +2,15 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Title from '../components/Title'
 import { css } from '@emotion/core'
+import SEO from '../components/SEO'
 
 const contact = () => {
   return (
     <Layout>
+      <SEO
+        title="Contact"
+        description="Contact page for web developer Chris Harley"
+      />
       <section
         css={css`
           display: flex;
@@ -61,7 +66,6 @@ const contact = () => {
                 name="email"
               />
               <textarea
-                name="message"
                 rows="5"
                 placeholder="message"
                 className="form-control"
